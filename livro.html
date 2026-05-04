@@ -10,6 +10,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
 
     <style>
+
+        /* Animação da Capa */
+        .capa-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            background-color: #050505;
+        }
+
+        .capa-titulo {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            color: #E6A817;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .arrow-down {
+            color: #E6A817;
+            font-size: 24px;
+            margin-top: 40px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-15px); }
+            60% { transform: translateY(-7px); }
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -118,6 +152,18 @@
 </head>
 <body>
 
+    <body>
+
+    <!-- A CAPA DO LIVRO (Força o Scroll e dispara a música) -->
+    <section class="capa-container">
+        <h1 class="capa-titulo">É assim que eu<br>te conheço,<br>Vidinha.</h1>
+        <div class="sunflower-deco" style="font-size: 40px; margin: 20px 0;">🌻</div>
+        <p style="font-size: 16px; color: #888; font-style: italic; margin-top: 20px;">Role para baixo para abrir o livro...</p>
+        <div class="arrow-down">↓</div>
+    </section>
+
+    <!-- CAPÍTULO 1: A ESSÊNCIA -->
+
     <!-- CAPÍTULO 1: A ESSÊNCIA -->
     <section class="chapter" id="capitulo-1">
         <div class="overlay"></div>
@@ -190,23 +236,49 @@
     </audio>
 
     <script>
-        // O Truque Invisível: A música toca no momento em que ela encostar na tela para rolar
         const audioLivro = document.getElementById('musicaLivro');
         
-        function iniciarMusica() {
-            if (audioLivro.paused) {
-                audioLivro.play().catch(e => console.log("Aguardando toque na tela..."));
+        // TENTATIVA 1: Forçar o autoplay brutal no momento em que a página abre
+        window.addEventListener('load', function() {
+            let promise = audioLivro.play();
+            
+            if (promise !== undefined) {
+                promise.then(_ => {
+                    // MÁGICA FEITA! O navegador deixou tocar direto sem ela fazer nada.
+                    console.log("Autoplay liberado direto!");
+                }).catch(error => {
+                    // O celular dela é linha-dura e bloqueou (geralmente iPhone faz isso).
+                    // Então armamos a armadilha invisível: qualquer micro-toque ou respiração na tela ativa a música.
+                    ativarGatilhos();
+                });
             }
-            // Desativa o gatilho depois que a música começar para não travar o celular
-            document.removeEventListener('touchstart', iniciarMusica);
-            document.removeEventListener('scroll', iniciarMusica);
-            document.removeEventListener('click', iniciarMusica);
+        });
+
+        // TENTATIVA 2 (O Plano B Invisível): Tentar tocar no primeiro esbarrão na tela
+        function tentarTocar() {
+            if (audioLivro.paused) {
+                let playPromise = audioLivro.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(_ => {
+                        removerGatilhos(); // Música tocou, limpamos a armadilha
+                    }).catch(error => {});
+                }
+            }
         }
 
-        // Fica 'espionando' o primeiro toque, clique ou rolagem que ela der na tela
-        document.addEventListener('touchstart', iniciarMusica, { once: true });
-        document.addEventListener('scroll', iniciarMusica, { once: true });
-        document.addEventListener('click', iniciarMusica, { once: true });
+        function ativarGatilhos() {
+            document.addEventListener('touchstart', tentarTocar);
+            document.addEventListener('scroll', tentarTocar);
+            document.addEventListener('click', tentarTocar);
+            document.addEventListener('wheel', tentarTocar);
+        }
+
+        function removerGatilhos() {
+            document.removeEventListener('touchstart', tentarTocar);
+            document.removeEventListener('scroll', tentarTocar);
+            document.removeEventListener('click', tentarTocar);
+            document.removeEventListener('wheel', tentarTocar);
+        }
     </script>
 
 </body>
