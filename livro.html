@@ -184,5 +184,30 @@
         <div class="sunflower-deco">🌻</div>
     </div>
 
+    <!-- ÁUDIO INVISÍVEL -->
+    <audio id="musicaLivro" loop>
+        <source src="geleira.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // O Truque Invisível: A música toca no momento em que ela encostar na tela para rolar
+        const audioLivro = document.getElementById('musicaLivro');
+        
+        function iniciarMusica() {
+            if (audioLivro.paused) {
+                audioLivro.play().catch(e => console.log("Aguardando toque na tela..."));
+            }
+            // Desativa o gatilho depois que a música começar para não travar o celular
+            document.removeEventListener('touchstart', iniciarMusica);
+            document.removeEventListener('scroll', iniciarMusica);
+            document.removeEventListener('click', iniciarMusica);
+        }
+
+        // Fica 'espionando' o primeiro toque, clique ou rolagem que ela der na tela
+        document.addEventListener('touchstart', iniciarMusica, { once: true });
+        document.addEventListener('scroll', iniciarMusica, { once: true });
+        document.addEventListener('click', iniciarMusica, { once: true });
+    </script>
+
 </body>
 </html>
