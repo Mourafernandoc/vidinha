@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário, Nady 🌻</title>
+    
+    <!-- Fontes elegantes do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Paleta de Cores e Variáveis */
+        :root {
+            --bg-color: #FAFAFA; /* Off-white elegante */
+            --text-main: #333333;
+            --text-muted: #555555;
+            --gold-sunflower: #E6A817; /* Amarelo ouro elegante */
+            --gold-light: #FDF5E6;
+        }
+
+        /* Reset Básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Lora', serif; /* Fonte que lembra livro */
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Container Principal - Limita o tamanho no PC e ajusta no Celular */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        /* Moldura da Foto */
+        .photo-frame {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            padding: 6px;
+            background: linear-gradient(135deg, var(--gold-sunflower), #FFF);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 32px;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 1.5s 0.5s forwards;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--bg-color);
+        }
+
+        /* Tipografia */
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--gold-sunflower);
+            margin-bottom: 24px;
+            text-align: center;
+            font-style: italic;
+            opacity: 0;
+            animation: fadeIn 2s 1s forwards;
+        }
+
+        .content {
+            font-size: 16px;
+            color: var(--text-muted);
+            text-align: justify;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeIn 2s 1.5s forwards;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+        }
+
+        .content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Botão para a próxima página */
+        .btn-proximo {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--gold-sunflower);
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 12px 32px;
+            border: 1px solid var(--gold-sunflower);
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: slideUp 1.5s 2s forwards;
+        }
+
+        .btn-proximo:hover {
+            background-color: var(--gold-light);
+            box-shadow: 0 4px 15px rgba(230, 168, 23, 0.2);
+        }
+
+        /* Enfeite de Girassol */
+        .sunflower-deco {
+            font-size: 24px;
+            text-align: center;
+            margin: 20px 0;
+            color: var(--gold-sunflower);
+            opacity: 0;
+            animation: fadeIn 2s 1.5s forwards;
+        }
+
+        /* Animações */
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Foto dela: Troque "foto-nady.jpg" pelo nome exato do arquivo que você subir no GitHub -->
+        <div class="photo-frame">
+            <img src="foto-nady.jpg" alt="A essência da Nady">
+        </div>
+
+        <h1>Feliz aniversário...</h1>
+
+        <div class="content">
+            <p>Nady, hoje o dia é todo seu e eu não poderia deixar de te escrever. Por mais que a gente tenha passado por tanta coisa este ano, você é e sempre será alguém que eu amo, que me apoiou e que tem um espaço intocável na minha vida. Hoje, eu só quero ser aquele Fernando que você sempre conheceu: gentil, amoroso e que quer, acima de tudo, ver você sorrindo — não só com os lábios, mas com os olhos e com a alma.</p>
+
+            <p>É admirável ver a forma como você se mantém firme diante de todo o caos que já enfrentou. Mesmo com os tropeços e decepções que aconteceram, você nunca demonstrou fraqueza. Sei que você é do tipo que carrega o mundo nas costas sem pedir ajuda, mas que tem uma grandeza imensa ao ser grata a quem te estende a mão. Essa sua força molda tudo ao seu redor: a profissional excelente que você se tornou, a linda filha de Oxum que carrega tanto brilho, e, acima de tudo, a mãe foda que você é, suportando o que for preciso para cuidar dos seus.</p>
+
+            <p>Eu quero que você saiba que, sempre que tiver um dia pesado, uma semana longa ou simplesmente precisar de algo doce para seguir em frente, você pode pensar em mim. Eu sempre vou fazer de tudo para melhorar o seu dia em 100%. Saber como você está, sentir o seu coração e ter o dever de te fazer feliz é algo que para mim não tem preço. É um sentimento que eu sempre vou carregar no peito, independentemente do que esteja acontecendo.</p>
+
+            <div class="sunflower-deco">🌻</div>
+
+            <p>Eu sempre serei aquele que vai saber ler os seus sorrisos, o seu olhar e o seu coração. Para mim, você é como um belo e lindo livro dourado com uma capa cheia de girassóis, escrito em letras garrafais: <strong>"assim que eu te conheço Vidinha"</strong>.</p>
+            
+            <p style="text-align: center; font-style: italic; margin-top: 30px;">Que o seu novo ciclo seja de muita luz e paz.</p>
+        </div>
+
+        <!-- Link para a página do Livro -->
+        <a href="livro.html" class="btn-proximo">Acesse o Capítulo Especial</a>
+
+    </div>
+
+</body>
+</html>
