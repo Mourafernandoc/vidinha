@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>É assim que eu te conheço, Vidinha</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: #111;
+            color: #FAFAFA;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Estrutura de cada "Página" ocupando a tela inteira */
+        .chapter {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px 24px;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-attachment: scroll; /* Scroll normal para rodar liso no celular */
+        }
+
+        /* Película escura por cima da foto para o texto ficar legível */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.85));
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #E6A817; /* Amarelo Girassol */
+            margin-bottom: 30px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .fact-list {
+            list-style: none;
+        }
+
+        .fact-list li {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #E0E0E0;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(230, 168, 23, 0.2);
+        }
+
+        .fact-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            color: #E6A817;
+            font-weight: 600;
+        }
+
+        /* Fundos Específicos para cada Capítulo */
+        #capitulo-1 { background-image: url('foto-ela.jpg'); }
+        #capitulo-2 { background-image: url('foto-trabalho.jpg'); }
+        #capitulo-3 { background-image: url('foto-mae.jpg'); }
+        #capitulo-4 { background-image: url('foto-nos.jpg'); }
+
+        .footer {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #050505;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #E6A817;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .sunflower-deco {
+            font-size: 30px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CAPÍTULO 1: A ESSÊNCIA -->
+    <section class="chapter" id="capitulo-1">
+        <div class="overlay"></div>
+        <div class="content">
+            <h2>A sua essência...</h2>
+            <ul class="fact-list">
+                <li>Mostra pro mundo uma casca grossa para ninguém te machucar, mas na verdade é dócil, gentil e carente como um panda.</li>
+                <li>No sol da manhã seus olhos ficam cor de mel, cheios de esperanças. No entardecer, ficam dourados, combinando com o brilho de um dia finalizado.</li>
+                <li>Gosta de drinks, mas o que ama de paixão é uma cerveja gelada com torresmo em um bar insalubre.</li>
+                <li>Fica ouvindo música viajando na vibe, mas quando toca um piseiro sai dançando toda agitada.</li>
+                <li>Não pede ajuda para ninguém, mas ama quando se oferecem de bom agrado. Não pergunta a opinião de ninguém, mas no fundo se importa.</li>
+                <li>Ama comidas refinadas, mas uma comidinha da roça bem pesada faz seus olhos brilharem.</li>
+                <li>Fala que não tem paciência para cuidar, mas ama colocar água nas plantas e conversar com elas.</li>
+                <li>Ama rolê aleatório, mas gosta de planejar viagens. Tem medo de arriscar, mas quando cria coragem vai até o fim.</li>
+                <li>Ama receber rosas... mas se derrete toda quando vê um girassol.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CAPÍTULO 2: A PROFISSIONAL -->
+    <section class="chapter" id="capitulo-2">
+        <div class="overlay"></div>
+        <div class="content">
+            <h2>A sua força...</h2>
+            <ul class="fact-list">
+                <li>Gosta de resolver as coisas do seu jeito, mas adora quando pegam pra resolver te trazendo só os resultados.</li>
+                <li>Diz para todos que odeia o seu trabalho, mas só eu sei o quanto você batalhou para estar onde você está.</li>
+                <li>Não espera reconhecimento de ninguém, mas quando é reconhecida, quer explodir de alegria.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CAPÍTULO 3: A MÃE -->
+    <section class="chapter" id="capitulo-3">
+        <div class="overlay"></div>
+        <div class="content">
+            <h2>A mãe foda que você é...</h2>
+            <ul class="fact-list">
+                <li>Ama ser elogiada por tudo que faz... mas quando ouve um "obrigado mãe", o coração transborda de emoção.</li>
+                <li>Doida pra ter uma filha... mas tem o receio de reviver o que passou na maternidade, por tudo o que já suportou pelos meninos.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CAPÍTULO 4: NÓS -->
+    <section class="chapter" id="capitulo-4">
+        <div class="overlay"></div>
+        <div class="content">
+            <h2>O que eu guardo de nós...</h2>
+            <ul class="fact-list">
+                <li>Detesta toque físico, mas ama uma massagem inesperada.</li>
+                <li>Gosta mais de cuidar do que de ser cuidada... por falta de costume, não sabe lidar quando alguém cuida de você.</li>
+                <li>Não gosta que fiquem te mandando mensagem toda hora, mas curte quando mando bom dia só porque lembrei de você.</li>
+                <li>Quando trago sua jujuba favorita, você transborda de felicidade igual uma criança (até porque é uma).</li>
+                <li>Adora dormir o mais à vontade possível, mas sempre procura minhas pernas para se sentir segura.</li>
+                <li>Adora um "então bora", mas se eu não segurar na sua mão pra isso, você não vai.</li>
+                <li>Não somos tão jovens para enlouquecer... <span class="highlight">mas a gente não é tão velho pra deixar o nosso sonho morrer.</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="footer">
+        <h1>Assim que eu te conheço, Vidinha</h1>
+        <div class="sunflower-deco">🌻</div>
+    </div>
+
+</body>
+</html>
